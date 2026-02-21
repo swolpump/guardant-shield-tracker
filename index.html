@@ -92,8 +92,10 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
 .asp-box{margin-top:16px;padding:14px;background:#0f172a;border-radius:10px;font-size:12px;color:#94a3b8}
 .asp-box b{color:#f1f5f9}
 </style>
-</head><body>
+</head>
+<body>
 <div class="wrap">
+  <!-- HEADER -->
   <div class="header">
     <div>
       <div><span class="title">Guardant Health — Shield Tracker</span><span class="live">LIVE</span></div>
@@ -101,6 +103,8 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
     </div>
     <div class="meta">Last updated<b>Feb 20, 2026</b>Q4 '25 earnings: Feb 19</div>
   </div>
+
+  <!-- KPIs -->
   <div class="kpis">
     <div class="kpi"><div class="kpi-label">Q4 '25 Shield Tests</div><div class="kpi-val">38,000</div><span class="kpi-delta up">&#9650; +58% QoQ</span><div class="kpi-sub">vs 24K in Q3 '25</div></div>
     <div class="kpi"><div class="kpi-label">FY25 Shield Revenue</div><div class="kpi-val">$79.7M</div><span class="kpi-delta up">&#9650; +1,349% YoY</span><div class="kpi-sub">vs $5.5M FY24</div></div>
@@ -109,6 +113,8 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
     <div class="kpi"><div class="kpi-label">Web Traffic (est.)</div><div class="kpi-val">~43.8K</div><span class="kpi-delta up">&#9650; +11% MoM</span><div class="kpi-sub">Feb '26 — SimilarWeb est.</div></div>
     <div class="kpi"><div class="kpi-label">Shield Search Interest</div><div class="kpi-val">88/100</div><span class="kpi-delta up">&#9650; +13% MoM</span><div class="kpi-sub">Google Trends proxy</div></div>
   </div>
+
+  <!-- TABS -->
   <div class="tabs">
     <button class="tab active" onclick="switchTab('overview')">Overview</button>
     <button class="tab" onclick="switchTab('q1predict')">Q1 Prediction vs Guide</button>
@@ -116,6 +122,8 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
     <button class="tab" onclick="switchTab('web')">Web Engagement</button>
     <button class="tab" onclick="switchTab('milestones')">Catalysts</button>
   </div>
+
+  <!-- OVERVIEW -->
   <div id="panel-overview" class="panel active">
     <div class="grid2">
       <div class="card">
@@ -132,6 +140,8 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
       <div class="chart-box short"><canvas id="ch-web-funnel"></canvas></div>
     </div>
   </div>
+
+  <!-- Q1 PREDICTION -->
   <div id="panel-q1predict" class="panel">
     <div class="verdict green">
       <div>
@@ -144,6 +154,7 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
         <div class="verdict-numsub">Point estimate (tests)</div>
       </div>
     </div>
+
     <div class="grid2" style="margin-bottom:20px">
       <div class="card">
         <div class="card-head"><div><div class="card-title">Test Volume: Prediction vs Guidance</div><div class="card-sub">Q1 '26 — proxy model vs company guidance range</div></div><div><span class="badge">Proxy</span><span class="badge">Guidance</span></div></div>
@@ -166,10 +177,12 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
         <div class="asp-box"><b>ASP Assumption:</b> ~$878 (Q4 '25 ASP of $924 × 0.95 for Medicare mix shift per mgmt guidance). Revenue = 48.5K tests × $878 = <b style="color:#10b981">$42.6M</b></div>
       </div>
     </div>
+
     <div class="card">
       <div class="card-head"><div><div class="card-title">Monthly Cumulative Test Buildup — Q1 '26</div><div class="card-sub">Month-by-month against quarterly guidance pace</div></div><div><span class="badge">Proxy Model</span></div></div>
       <div class="chart-box short"><canvas id="ch-q1-cumul"></canvas></div>
     </div>
+
     <div class="card">
       <div class="card-head"><div><div class="card-title">Leading Indicator Signals</div><div class="card-sub">Web and distribution signals informing the Q1 prediction</div></div><div><span class="badge">SimilarWeb</span><span class="badge">Google Trends</span></div></div>
       <div class="grid3">
@@ -181,6 +194,7 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
         <div class="signal"><div class="signal-label">TRICARE Ramp</div><div class="signal-val">Active</div><span class="signal-arrow">&#9650;</span><div class="signal-note">9.6M new eligible beneficiaries</div></div>
       </div>
     </div>
+
     <div class="method">
       <div style="font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:10px">Prediction Methodology</div>
       <div class="grid2" style="gap:20px">
@@ -196,6 +210,8 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
       <div class="warn"><b>Caveats:</b> Web proxy model uses estimated (not directly measured) portal traffic. Actual conversion rates may differ from Q4. Quest EMR ramp timing is uncertain. ASP mix shift may differ from guidance. This is a directional indicator, not a precise forecast.</div>
     </div>
   </div>
+
+  <!-- VOLUME -->
   <div id="panel-volume" class="panel">
     <div class="card">
       <div class="card-head"><div><div class="card-title">Quarterly Shield Test Volume</div><div class="card-sub">Actual reported volumes with QoQ growth rates</div></div><div><span class="badge">GH 10-Q/10-K</span></div></div>
@@ -215,6 +231,8 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
       </div>
     </div>
   </div>
+
+  <!-- WEB ENGAGEMENT -->
   <div id="panel-web" class="panel">
     <div class="info-box"><b>Methodology:</b> Web traffic estimates from SimilarWeb (~39.5K monthly visits to guardanthealth.com as of Dec '25). Shield page views and ordering portal engagement modeled from Shield keyword share and portal referral correlation with reported test volumes. Google Trends normalized 0–100.</div>
     <div class="grid2">
@@ -237,6 +255,8 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
       <div style="font-size:11px;color:#94a3b8;text-align:center">*Tests ordered includes orders from EMR integrations, fax, and phone — not only web portal</div>
     </div>
   </div>
+
+  <!-- CATALYSTS -->
   <div id="panel-milestones" class="panel">
     <div class="card">
       <div class="card-head"><div><div class="card-title">Key Catalysts & Milestones</div><div class="card-sub">Events driving Shield adoption and test volume growth</div></div><div><span class="badge">GH Press</span><span class="badge">FDA</span><span class="badge">NCCN</span></div></div>
@@ -252,6 +272,7 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
         <div class="milestone"><div class="ms-date">Q1 2026</div><div class="ms-dot high"></div><div><div class="ms-event">Quest EMR integration goes live nationwide</div><span class="ms-impact high">high impact</span></div></div>
       </div>
     </div>
+
     <div class="card">
       <div class="card-head"><div><div class="card-title">Distribution Expansion Tracker</div><div class="card-sub">Partnership-driven access points for Shield ordering</div></div><div><span class="badge">GH Press</span></div></div>
       <div class="grid2" style="gap:16px">
@@ -261,6 +282,7 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
         <div class="partner"><div class="partner-head"><div class="partner-name">Direct Sales Force</div><span class="partner-status" style="background:rgba(217,119,6,.12);color:#d97706">Expanding</span></div><div class="partner-detail">Commercial reps targeting PCPs and GI specialists</div><div class="partner-reach">Reach: Growing</div></div>
       </div>
     </div>
+
     <div class="card">
       <div style="font-size:18px;font-weight:700;margin-bottom:16px">Upcoming Catalysts to Watch</div>
       <div class="grid3">
@@ -270,12 +292,16 @@ body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5
       </div>
     </div>
   </div>
+
+  <!-- FOOTER -->
   <div class="footer">
     <div>Data sources: GH Q4 2025 earnings (Feb 19, 2026), SimilarWeb estimates, Google Trends proxy, company press releases. Web engagement metrics are modeled estimates.</div>
     <div>Not investment advice. For informational purposes only.</div>
   </div>
 </div>
+
 <script>
+// -- DATA --
 const Q = ["Q1 '24","Q2 '24","Q3 '24","Q4 '24","Q1 '25","Q2 '25","Q3 '25","Q4 '25"];
 const tests = [3200,4800,6100,6400,9000,16000,24000,38000];
 const rev = [2.8,4.1,5.3,5.5,7.0,13.5,24.1,35.1];
@@ -290,6 +316,8 @@ const shieldPV = [8200,8900,9800,10500,11200,12800,13400,14100,15600,16800,17500
 const orderClicks = [1800,2100,2500,2900,3400,4100,4800,5200,5900,6500,7200,7800,8600,9500];
 const searchInt = [38,41,42,48,52,55,60,63,68,72,75,78,82,88];
 const qoq = tests.map((t,i)=>i===0?0:Math.round(((t-tests[i-1])/tests[i-1])*100));
+
+// -- CHART DEFAULTS --
 Chart.defaults.color = '#94a3b8';
 Chart.defaults.borderColor = '#334155';
 Chart.defaults.font.family = "'Inter',-apple-system,sans-serif";
@@ -297,400 +325,91 @@ Chart.defaults.font.size = 11;
 Chart.defaults.plugins.legend.labels.usePointStyle = true;
 Chart.defaults.plugins.legend.labels.pointStyleWidth = 10;
 Chart.defaults.plugins.legend.labels.padding = 16;
+
 function switchTab(id) {
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('panel-'+id).classList.add('active');
   event.target.classList.add('active');
 }
+
+// -- OVERVIEW CHARTS --
 new Chart(document.getElementById('ch-volume-overview'), {
   type:'bar',
-  data:{labels:[...Q,...guideQ],datasets:[{label:'Actual Tests',data:[...tests,null,null,null,null],backgroundColor:'#1a56db',borderRadius:4,order:2},{label:'2026 Guidance (Mid)',data:[null,null,null,null,null,null,null,null,...guideMid],type:'line',borderColor:'#7c3aed',borderDash:[6,3],pointBackgroundColor:'#7c3aed',pointRadius:4,borderWidth:2,order:1}]},
+  data:{
+    labels:[...Q,...guideQ],
+    datasets:[
+      {label:'Actual Tests',data:[...tests,null,null,null,null],backgroundColor:'#1a56db',borderRadius:4,order:2},
+      {label:'2026 Guidance (Mid)',data:[null,null,null,null,null,null,null,null,...guideMid],type:'line',borderColor:'#7c3aed',borderDash:[6,3],pointBackgroundColor:'#7c3aed',pointRadius:4,borderWidth:2,order:1},
+    ]
+  },
   options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
 });
+
 new Chart(document.getElementById('ch-rev-asp'), {
   type:'bar',
-  data:{labels:Q,datasets:[{label:'Revenue ($M)',data:rev,backgroundColor:'#059669',borderRadius:4,yAxisID:'y',order:2},{label:'ASP ($)',data:asp,type:'line',borderColor:'#d97706',pointBackgroundColor:'#d97706',pointRadius:3,borderWidth:2,yAxisID:'y1',order:1}]},
+  data:{
+    labels:Q,
+    datasets:[
+      {label:'Revenue ($M)',data:rev,backgroundColor:'#059669',borderRadius:4,yAxisID:'y',order:2},
+      {label:'ASP ($)',data:asp,type:'line',borderColor:'#d97706',pointBackgroundColor:'#d97706',pointRadius:3,borderWidth:2,yAxisID:'y1',order:1},
+    ]
+  },
   options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>'$'+v+'M'},grid:{color:'#33415544'}},y1:{position:'right',ticks:{callback:v=>'$'+v},grid:{display:false}},x:{grid:{display:false}}}}
 });
+
 new Chart(document.getElementById('ch-web-funnel'), {
   type:'line',
-  data:{labels:months,datasets:[{label:'Total Site Visits',data:portalVisits,borderColor:'#1a56db',backgroundColor:'rgba(26,86,219,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2},{label:'Shield Page Views',data:shieldPV,borderColor:'#059669',backgroundColor:'rgba(5,150,105,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2},{label:'Ordering Portal Clicks',data:orderClicks,borderColor:'#7c3aed',backgroundColor:'rgba(124,58,237,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2}]},
+  data:{
+    labels:months,
+    datasets:[
+      {label:'Total Site Visits',data:portalVisits,borderColor:'#1a56db',backgroundColor:'rgba(26,86,219,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2},
+      {label:'Shield Page Views',data:shieldPV,borderColor:'#059669',backgroundColor:'rgba(5,150,105,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2},
+      {label:'Ordering Portal Clicks',data:orderClicks,borderColor:'#7c3aed',backgroundColor:'rgba(124,58,237,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2},
+    ]
+  },
   options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
 });
+
+// -- Q1 PREDICTION --
 new Chart(document.getElementById('ch-q1-cumul'), {
   type:'line',
-  data:{labels:["Jan '26","Feb '26","Mar '26E"],datasets:[{label:'Proxy Prediction (Cumulative)',data:[15523,33011,48469],borderColor:'#10b981',pointBackgroundColor:'#10b981',pointRadius:5,borderWidth:3},{label:'Guidance Pace (Mid)',data:[14500,29000,43500],borderColor:'#1a56db',borderDash:[6,3],pointBackgroundColor:'#1a56db',pointRadius:5,borderWidth:2}]},
+  data:{
+    labels:["Jan '26","Feb '26","Mar '26E"],
+    datasets:[
+      {label:'Proxy Prediction (Cumulative)',data:[15523,33011,48469],borderColor:'#10b981',pointBackgroundColor:'#10b981',pointRadius:5,borderWidth:3},
+      {label:'Guidance Pace (Mid)',data:[14500,29000,43500],borderColor:'#1a56db',borderDash:[6,3],pointBackgroundColor:'#1a56db',pointRadius:5,borderWidth:2},
+    ]
+  },
   options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
 });
+
+// -- VOLUME CHARTS --
 new Chart(document.getElementById('ch-vol-qoq'), {
   type:'bar',
-  data:{labels:Q,datasets:[{label:'Tests',data:tests,backgroundColor:'#1a56db',borderRadius:4,yAxisID:'y',order:2},{label:'QoQ Growth %',data:qoq,type:'line',borderColor:'#10b981',pointBackgroundColor:'#10b981',pointRadius:4,borderWidth:2,yAxisID:'y1',order:1}]},
+  data:{
+    labels:Q,
+    datasets:[
+      {label:'Tests',data:tests,backgroundColor:'#1a56db',borderRadius:4,yAxisID:'y',order:2},
+      {label:'QoQ Growth %',data:qoq,type:'line',borderColor:'#10b981',pointBackgroundColor:'#10b981',pointRadius:4,borderWidth:2,yAxisID:'y1',order:1},
+    ]
+  },
   options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},y1:{position:'right',ticks:{callback:v=>v+'%'},grid:{display:false}},x:{grid:{display:false}}}}
 });
+
 new Chart(document.getElementById('ch-guide-range'), {
   type:'bar',
-  data:{labels:guideQ,datasets:[{label:'High End',data:guideHigh,backgroundColor:'rgba(124,58,237,.3)',borderRadius:4},{label:'Low End',data:guideLow,backgroundColor:'#7c3aed',borderRadius:4}]},
+  data:{
+    labels:guideQ,
+    datasets:[
+      {label:'High End',data:guideHigh,backgroundColor:'rgba(124,58,237,.3)',borderRadius:4},
+      {label:'Low End',data:guideLow,backgroundColor:'#7c3aed',borderRadius:4},
+    ]
+  },
   options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
 });
-new Chart(document.getElementById('ch-portal'), {
-  type:'line',
-  data:{labels:months,datasets:[{label:'Total Visits',data:portalVisits,borderColor:'#1a56db',backgroundColor:'rgba(26,86,219,.15)',fill:true,tension:.3,borderWidth:2,pointRadius:2}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>(v/1000)+'K'},grid:{color:'#33415544'}},x:{grid:{display:false}}},plugins:{legend:{display:false}}}
-});
-new Chart(document.getElementById('ch-shield-pv'), {
-  type:'line',
-  data:{labels:months,datasets:[{label:'Shield Page Views',data:shieldPV,borderColor:'#059669',backgroundColor:'rgba(5,150,105,.15)',fill:true,tension:.3,borderWidth:2,pointRadius:2}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>(v/1000)+'K'},grid:{color:'#33415544'}},x:{grid:{display:false}}},plugins:{legend:{display:false}}}
-});
-new Chart(document.getElementById('ch-ordering'), {
-  type:'bar',
-  data:{labels:months,datasets:[{label:'Ordering Clicks',data:orderClicks,backgroundColor:'#7c3aed',borderRadius:4}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>(v/1000)+'K'},grid:{color:'#33415544'}},x:{grid:{display:false}}},plugins:{legend:{display:false}}}
-});
-new Chart(document.getElementById('ch-gtrends'), {
-  type:'line',
-  data:{labels:months,datasets:[{label:'Search Interest',data:searchInt,borderColor:'#d97706',pointBackgroundColor:'#d97706',pointRadius:3,borderWidth:2,tension:.3}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{min:0,max:100,grid:{color:'#33415544'}},x:{grid:{display:false}}},plugins:{legend:{display:false},annotation:{}}}
-});
-</script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guardant Health — Shield Tracker</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0f172a;font-family:'Inter',-apple-system,sans-serif;color:#f1f5f9;min-height:100vh}
-.wrap{max-width:1400px;margin:0 auto;padding:24px 28px}
-.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px}
-.title{font-size:24px;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.live{font-size:12px;background:rgba(16,185,129,.12);color:#10b981;padding:3px 10px;border-radius:6px;font-weight:600;margin-left:12px;display:inline-block;vertical-align:middle;-webkit-text-fill-color:#10b981}
-.subtitle{font-size:13px;color:#94a3b8;margin-top:4px}
-.meta{text-align:right;font-size:11px;color:#94a3b8}
-.meta b{font-size:13px;color:#f1f5f9;display:block}
-.kpis{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px}
-.kpi{background:#1e293b;border-radius:12px;padding:20px 22px;border:1px solid #334155;flex:1 1 200px;min-width:185px}
-.kpi-label{font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
-.kpi-val{font-size:26px;font-weight:700;margin-bottom:4px}
-.kpi-delta{font-size:13px;font-weight:600;padding:2px 8px;border-radius:6px;display:inline-block}
-.kpi-delta.up{color:#10b981;background:rgba(16,185,129,.12)}
-.kpi-sub{font-size:11px;color:#94a3b8;margin-top:6px}
-.tabs{display:flex;gap:4px;margin-bottom:24px;background:#1e293b;border-radius:10px;padding:4px;width:fit-content}
-.tab{padding:8px 20px;border-radius:8px;border:none;cursor:pointer;font-size:13px;font-weight:600;background:transparent;color:#94a3b8;font-family:inherit;transition:all .2s}
-.tab.active{background:#1a56db;color:#fff}
-.tab:hover:not(.active){color:#f1f5f9}
-.panel{display:none}.panel.active{display:block}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{background:#1e293b;border-radius:12px;padding:24px;border:1px solid #334155;margin-bottom:20px}
-.card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
-.card-title{font-size:15px;font-weight:600}
-.card-sub{font-size:12px;color:#94a3b8;margin-top:2px}
-.badge{font-size:10px;background:rgba(26,86,219,.12);color:#1a56db;padding:2px 8px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-left:4px}
-.chart-box{position:relative;height:280px}
-.chart-box.short{height:260px}
-.verdict{border-radius:14px;padding:20px 28px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center}
-.verdict.green{background:rgba(16,185,129,.08);border:2px solid #10b981}
-.verdict-label{font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.verdict-text{font-size:22px;font-weight:800;color:#10b981}
-.verdict-num{font-size:36px;font-weight:800;color:#10b981;text-align:right}
-.verdict-numsub{font-size:12px;color:#94a3b8;text-align:right}
-.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.bar-label{width:120px;font-size:12px;color:#94a3b8;text-align:right;flex-shrink:0}
-.bar-track{flex:1;height:24px;background:#0f172a;border-radius:6px;overflow:hidden}
-.bar-fill{height:100%;border-radius:6px;transition:width .5s ease}
-.bar-val{width:55px;font-size:13px;font-weight:700;flex-shrink:0}
-.signal{background:#0f172a;border-radius:10px;padding:14px;border:1px solid #334155}
-.signal-label{font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.signal-val{font-size:20px;font-weight:700;display:inline}
-.signal-arrow{font-size:11px;font-weight:600;padding:2px 6px;border-radius:4px;background:rgba(16,185,129,.12);color:#10b981;margin-left:8px}
-.signal-note{font-size:11px;color:#94a3b8;margin-top:4px}
-.method{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155;font-size:12px;color:#94a3b8;line-height:1.7}
-.method b{color:#f1f5f9}
-.method .warn{margin-top:14px;padding:10px;background:#0f172a;border-radius:8px;font-size:11px}
-.method .warn b{color:#d97706}
-.info-box{background:linear-gradient(135deg,rgba(26,86,219,.1),rgba(124,58,237,.1));border:1px solid #334155;border-radius:12px;padding:16px;margin-bottom:20px;font-size:13px;color:#94a3b8}
-.info-box b{color:#f1f5f9}
-.stat{background:#0f172a;border-radius:10px;padding:16px}
-.stat-label{font-size:11px;color:#94a3b8;text-transform:uppercase;margin-bottom:6px}
-.stat-val{font-size:22px;font-weight:700}
-.stat-note{font-size:11px;color:#94a3b8;margin-top:4px}
-.milestone{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #334155}
-.milestone:last-child{border-bottom:none}
-.ms-date{min-width:90px;font-size:12px;font-weight:600;color:#94a3b8}
-.ms-dot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex-shrink:0}
-.ms-dot.high{background:#10b981}.ms-dot.medium{background:#d97706}
-.ms-event{font-size:14px}
-.ms-impact{font-size:10px;font-weight:600;text-transform:uppercase}
-.ms-impact.high{color:#10b981}.ms-impact.medium{color:#d97706}
-.partner{background:#0f172a;border-radius:10px;padding:18px;border:1px solid #334155}
-.partner-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.partner-name{font-size:15px;font-weight:700}
-.partner-status{font-size:10px;font-weight:600;padding:2px 8px;border-radius:6px}
-.partner-detail{font-size:12px;color:#94a3b8;margin-bottom:8px}
-.partner-reach{font-size:12px;font-weight:600}
-.catalyst{background:#0f172a;border-radius:10px;padding:16px;border:1px solid #334155}
-.catalyst-event{font-size:14px;font-weight:700;color:#1a56db;margin-bottom:6px}
-.catalyst-timing{font-size:11px;color:#d97706;font-weight:600;margin-bottom:8px}
-.catalyst-why{font-size:12px;color:#94a3b8;line-height:1.5}
-.funnel{display:flex;justify-content:center;align-items:center;gap:0;padding:20px 0;flex-wrap:wrap}
-.funnel-step{border-radius:12px;padding:18px 24px;text-align:center;min-width:130px}
-.funnel-label{font-size:11px;color:#94a3b8;text-transform:uppercase;margin-bottom:4px}
-.funnel-val{font-size:22px;font-weight:700}
-.funnel-pct{font-size:11px;color:#94a3b8;margin-top:4px}
-.funnel-arrow{font-size:20px;color:#6b7280;margin:0 8px}
-.footer{margin-top:28px;padding:16px 0;border-top:1px solid #334155;display:flex;justify-content:space-between;font-size:11px;color:#94a3b8}
-.asp-box{margin-top:16px;padding:14px;background:#0f172a;border-radius:10px;font-size:12px;color:#94a3b8}
-.asp-box b{color:#f1f5f9}
-</style>
-</head><body>
-<div class="wrap">
-  <div class="header">
-    <div>
-      <div><span class="title">Guardant Health — Shield Tracker</span><span class="live">LIVE</span></div>
-      <div class="subtitle">NASDAQ: GH &nbsp;|&nbsp; Shield CRC screening test volume & web engagement proxy dashboard</div>
-    </div>
-    <div class="meta">Last updated<b>Feb 20, 2026</b>Q4 '25 earnings: Feb 19</div>
-  </div>
-  <div class="kpis">
-    <div class="kpi"><div class="kpi-label">Q4 '25 Shield Tests</div><div class="kpi-val">38,000</div><span class="kpi-delta up">&#9650; +58% QoQ</span><div class="kpi-sub">vs 24K in Q3 '25</div></div>
-    <div class="kpi"><div class="kpi-label">FY25 Shield Revenue</div><div class="kpi-val">$79.7M</div><span class="kpi-delta up">&#9650; +1,349% YoY</span><div class="kpi-sub">vs $5.5M FY24</div></div>
-    <div class="kpi"><div class="kpi-label">2026 Test Guidance</div><div class="kpi-val">210–225K</div><span class="kpi-delta up">&#9650; +141–159% YoY</span><div class="kpi-sub">Company guidance</div></div>
-    <div class="kpi"><div class="kpi-label">2026 Rev Guidance</div><div class="kpi-val">$162–174M</div><span class="kpi-delta up">&#9650; ~2x YoY</span><div class="kpi-sub">Company guidance</div></div>
-    <div class="kpi"><div class="kpi-label">Web Traffic (est.)</div><div class="kpi-val">~43.8K</div><span class="kpi-delta up">&#9650; +11% MoM</span><div class="kpi-sub">Feb '26 — SimilarWeb est.</div></div>
-    <div class="kpi"><div class="kpi-label">Shield Search Interest</div><div class="kpi-val">88/100</div><span class="kpi-delta up">&#9650; +13% MoM</span><div class="kpi-sub">Google Trends proxy</div></div>
-  </div>
-  <div class="tabs">
-    <button class="tab active" onclick="switchTab('overview')">Overview</button>
-    <button class="tab" onclick="switchTab('q1predict')">Q1 Prediction vs Guide</button>
-    <button class="tab" onclick="switchTab('volume')">Test Volume</button>
-    <button class="tab" onclick="switchTab('web')">Web Engagement</button>
-    <button class="tab" onclick="switchTab('milestones')">Catalysts</button>
-  </div>
-  <div id="panel-overview" class="panel active">
-    <div class="grid2">
-      <div class="card">
-        <div class="card-head"><div><div class="card-title">Shield Test Volume — Actuals + 2026 Guidance</div><div class="card-sub">Quarterly tests with company guidance range</div></div><div><span class="badge">GH Earnings</span><span class="badge">Guidance</span></div></div>
-        <div class="chart-box"><canvas id="ch-volume-overview"></canvas></div>
-      </div>
-      <div class="card">
-        <div class="card-head"><div><div class="card-title">Shield Revenue ($M) + ASP Trend</div><div class="card-sub">Quarterly revenue with average selling price</div></div><div><span class="badge">GH Earnings</span></div></div>
-        <div class="chart-box"><canvas id="ch-rev-asp"></canvas></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">Web Engagement Funnel — Monthly</div><div class="card-sub">guardanthealth.com visits → Shield page views → Ordering portal clicks</div></div><div><span class="badge">SimilarWeb</span><span class="badge">Proxy</span></div></div>
-      <div class="chart-box short"><canvas id="ch-web-funnel"></canvas></div>
-    </div>
-  </div>
-  <div id="panel-q1predict" class="panel">
-    <div class="verdict green">
-      <div>
-        <div class="verdict-label">Q1 2026 Web Proxy Verdict</div>
-        <div class="verdict-text">TRACKING ABOVE GUIDANCE MID</div>
-        <div style="font-size:13px;color:#94a3b8;margin-top:4px">Proxy model: <b style="color:#f1f5f9">44.6K–52.4K tests</b> &nbsp;vs&nbsp; Guidance: <b style="color:#f1f5f9">42.0K–45.0K tests</b></div>
-      </div>
-      <div>
-        <div class="verdict-num">48.5K</div>
-        <div class="verdict-numsub">Point estimate (tests)</div>
-      </div>
-    </div>
-    <div class="grid2" style="margin-bottom:20px">
-      <div class="card">
-        <div class="card-head"><div><div class="card-title">Test Volume: Prediction vs Guidance</div><div class="card-sub">Q1 '26 — proxy model vs company guidance range</div></div><div><span class="badge">Proxy</span><span class="badge">Guidance</span></div></div>
-        <div>
-          <div class="bar-row"><div class="bar-label">Guidance Low</div><div class="bar-track"><div class="bar-fill" style="width:86.7%;background:#6b7280;opacity:.5"></div></div><div class="bar-val" style="color:#6b7280">42.0K</div></div>
-          <div class="bar-row"><div class="bar-label">Guidance Mid</div><div class="bar-track"><div class="bar-fill" style="width:93.3%;background:#1a56db;opacity:.5"></div></div><div class="bar-val" style="color:#1a56db">43.5K</div></div>
-          <div class="bar-row"><div class="bar-label">Guidance High</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#1a56db;opacity:.5"></div></div><div class="bar-val" style="color:#1a56db">45.0K</div></div>
-          <div class="bar-row"><div class="bar-label">Proxy Prediction</div><div class="bar-track"><div class="bar-fill" style="width:107.8%;background:#10b981;opacity:.8"></div></div><div class="bar-val" style="color:#10b981">48.5K</div></div>
-          <div class="bar-row"><div class="bar-label">Prediction Low</div><div class="bar-track"><div class="bar-fill" style="width:99.1%;background:#10b98188;opacity:.8"></div></div><div class="bar-val" style="color:#10b981">44.6K</div></div>
-          <div class="bar-row"><div class="bar-label">Prediction High</div><div class="bar-track"><div class="bar-fill" style="width:116.4%;background:#10b981;opacity:.8"></div></div><div class="bar-val" style="color:#10b981">52.4K</div></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-head"><div><div class="card-title">Revenue: Prediction vs Guidance</div><div class="card-sub">Q1 '26 — implied revenue at ~$878 ASP</div></div><div><span class="badge">Proxy</span><span class="badge">Guidance</span></div></div>
-        <div style="padding-top:12px">
-          <div class="bar-row"><div class="bar-label">Rev Guide Low</div><div class="bar-track"><div class="bar-fill" style="width:91.4%;background:#6b7280;opacity:.5;height:30px"></div></div><div class="bar-val" style="color:#6b7280;width:60px;font-size:14px">$32M</div></div>
-          <div class="bar-row"><div class="bar-label">Rev Guide High</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#1a56db;opacity:.5;height:30px"></div></div><div class="bar-val" style="color:#1a56db;width:60px;font-size:14px">$35M</div></div>
-          <div class="bar-row"><div class="bar-label">Rev Prediction</div><div class="bar-track"><div class="bar-fill" style="width:121.7%;background:#10b981;opacity:.6;height:30px"></div></div><div class="bar-val" style="color:#10b981;width:60px;font-size:14px">$42.6M</div></div>
-        </div>
-        <div class="asp-box"><b>ASP Assumption:</b> ~$878 (Q4 '25 ASP of $924 × 0.95 for Medicare mix shift per mgmt guidance). Revenue = 48.5K tests × $878 = <b style="color:#10b981">$42.6M</b></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">Monthly Cumulative Test Buildup — Q1 '26</div><div class="card-sub">Month-by-month against quarterly guidance pace</div></div><div><span class="badge">Proxy Model</span></div></div>
-      <div class="chart-box short"><canvas id="ch-q1-cumul"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">Leading Indicator Signals</div><div class="card-sub">Web and distribution signals informing the Q1 prediction</div></div><div><span class="badge">SimilarWeb</span><span class="badge">Google Trends</span></div></div>
-      <div class="grid3">
-        <div class="signal"><div class="signal-label">Ordering Portal Clicks (Jan+Feb)</div><div class="signal-val">18.1K</div><span class="signal-arrow">&#9650;</span><div class="signal-note">+22% vs Nov+Dec avg</div></div>
-        <div class="signal"><div class="signal-label">Shield Page Views (Feb)</div><div class="signal-val">22.4K</div><span class="signal-arrow">&#9650;</span><div class="signal-note">+18% vs Dec '25</div></div>
-        <div class="signal"><div class="signal-label">Google Trends Interest (Feb)</div><div class="signal-val">88/100</div><span class="signal-arrow">&#9650;</span><div class="signal-note">All-time high</div></div>
-        <div class="signal"><div class="signal-label">Site Traffic (Feb est.)</div><div class="signal-val">~43.8K</div><span class="signal-arrow">&#9650;</span><div class="signal-note">+11% MoM</div></div>
-        <div class="signal"><div class="signal-label">Quest EMR Launch</div><div class="signal-val">Mid-Q1</div><span class="signal-arrow">&#9650;</span><div class="signal-note">Partial quarter — full impact Q2</div></div>
-        <div class="signal"><div class="signal-label">TRICARE Ramp</div><div class="signal-val">Active</div><span class="signal-arrow">&#9650;</span><div class="signal-note">9.6M new eligible beneficiaries</div></div>
-      </div>
-    </div>
-    <div class="method">
-      <div style="font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:10px">Prediction Methodology</div>
-      <div class="grid2" style="gap:20px">
-        <div>
-          <b>Step 1 — Ordering Click Extrapolation</b><br>Jan (8.6K) + Feb (9.5K) actual clicks, Mar estimated at 10.3K (+8% MoM conservative). Q1 total: ~28.4K clicks.
-          <br><br><b>Step 2 — Click-to-Test Conversion</b><br>Q4 '25 ratio: ~21.5K ordering clicks → 38K tests = <b style="color:#059669">1.77× multiplier</b>. Includes non-web orders (fax, EMR, phone). Applied to Q1: ~50.2K base tests.
-        </div>
-        <div>
-          <b>Step 3 — Quest EMR Uplift</b><br>Quest integration goes live mid-Q1. Conservative +6% partial-quarter boost (400K+ physicians). Adjusted: <b style="color:#10b981">48.5K tests</b>.
-          <br><br><b>Step 4 — Confidence Range</b><br>±8% band for model uncertainty: 44.6K–52.4K tests. Company guidance: 42.0K–45.0K.
-        </div>
-      </div>
-      <div class="warn"><b>Caveats:</b> Web proxy model uses estimated (not directly measured) portal traffic. Actual conversion rates may differ from Q4. Quest EMR ramp timing is uncertain. ASP mix shift may differ from guidance. This is a directional indicator, not a precise forecast.</div>
-    </div>
-  </div>
-  <div id="panel-volume" class="panel">
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">Quarterly Shield Test Volume</div><div class="card-sub">Actual reported volumes with QoQ growth rates</div></div><div><span class="badge">GH 10-Q/10-K</span></div></div>
-      <div class="chart-box"><canvas id="ch-vol-qoq"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">2026 Guidance Range — Implied Quarterly Trajectory</div><div class="card-sub">Management guidance: 210K–225K tests for FY26</div></div><div><span class="badge">Guidance</span></div></div>
-      <div class="chart-box"><canvas id="ch-guide-range"></canvas></div>
-    </div>
-    <div class="card">
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Key Volume Metrics</div>
-      <div class="grid4">
-        <div class="stat"><div class="stat-label">FY25 Total Tests</div><div class="stat-val">87,000</div><div class="stat-note">Screening only</div></div>
-        <div class="stat"><div class="stat-label">Q4 '25 Tests</div><div class="stat-val">38,000</div><div class="stat-note">~44% of FY25 total</div></div>
-        <div class="stat"><div class="stat-label">YoY Q4 Growth</div><div class="stat-val">~494%</div><div class="stat-note">vs 6,400 in Q4 '24</div></div>
-        <div class="stat"><div class="stat-label">FY26 Guidance</div><div class="stat-val">210–225K</div><div class="stat-note">141–159% YoY growth</div></div>
-      </div>
-    </div>
-  </div>
-  <div id="panel-web" class="panel">
-    <div class="info-box"><b>Methodology:</b> Web traffic estimates from SimilarWeb (~39.5K monthly visits to guardanthealth.com as of Dec '25). Shield page views and ordering portal engagement modeled from Shield keyword share and portal referral correlation with reported test volumes. Google Trends normalized 0–100.</div>
-    <div class="grid2">
-      <div class="card"><div class="card-head"><div><div class="card-title">Physician Portal Traffic Proxy</div><div class="card-sub">Estimated monthly visits to guardanthealth.com</div></div><div><span class="badge">SimilarWeb</span></div></div><div class="chart-box short"><canvas id="ch-portal"></canvas></div></div>
-      <div class="card"><div class="card-head"><div><div class="card-title">Shield Landing Page Engagement</div><div class="card-sub">Estimated Shield-specific page views</div></div><div><span class="badge">Proxy</span></div></div><div class="chart-box short"><canvas id="ch-shield-pv"></canvas></div></div>
-      <div class="card"><div class="card-head"><div><div class="card-title">Ordering Portal Click-Throughs</div><div class="card-sub">Proxy for physician test ordering intent</div></div><div><span class="badge">Proxy</span></div></div><div class="chart-box short"><canvas id="ch-ordering"></canvas></div></div>
-      <div class="card"><div class="card-head"><div><div class="card-title">Google Trends — 'Guardant Shield'</div><div class="card-sub">Normalized 0–100 scale</div></div><div><span class="badge">Google Trends</span></div></div><div class="chart-box short"><canvas id="ch-gtrends"></canvas></div></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">Web-to-Test Conversion Funnel</div><div class="card-sub">Site visits → Shield views → ordering clicks → tests</div></div><div><span class="badge">Blended</span></div></div>
-      <div class="funnel">
-        <div class="funnel-step" style="background:rgba(26,86,219,.12);border:2px solid #1a56db"><div class="funnel-label">Site Visits</div><div class="funnel-val" style="color:#1a56db">43.8K</div><div class="funnel-pct">(100%)</div></div>
-        <div class="funnel-arrow">→</div>
-        <div class="funnel-step" style="background:rgba(5,150,105,.12);border:2px solid #059669"><div class="funnel-label">Shield Views</div><div class="funnel-val" style="color:#059669">22.4K</div><div class="funnel-pct">(51%)</div></div>
-        <div class="funnel-arrow">→</div>
-        <div class="funnel-step" style="background:rgba(124,58,237,.12);border:2px solid #7c3aed"><div class="funnel-label">Ordering Clicks</div><div class="funnel-val" style="color:#7c3aed">9.5K</div><div class="funnel-pct">(22%)</div></div>
-        <div class="funnel-arrow">→</div>
-        <div class="funnel-step" style="background:rgba(217,119,6,.12);border:2px solid #d97706"><div class="funnel-label">Tests Ordered</div><div class="funnel-val" style="color:#d97706">~12K</div><div class="funnel-pct">(~27%*)</div></div>
-      </div>
-      <div style="font-size:11px;color:#94a3b8;text-align:center">*Tests ordered includes orders from EMR integrations, fax, and phone — not only web portal</div>
-    </div>
-  </div>
-  <div id="panel-milestones" class="panel">
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">Key Catalysts & Milestones</div><div class="card-sub">Events driving Shield adoption and test volume growth</div></div><div><span class="badge">GH Press</span><span class="badge">FDA</span><span class="badge">NCCN</span></div></div>
-      <div>
-        <div class="milestone"><div class="ms-date">Jul 2024</div><div class="ms-dot high"></div><div><div class="ms-event">FDA approves Shield as primary CRC screening option</div><span class="ms-impact high">high impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Oct 2024</div><div class="ms-dot medium"></div><div><div class="ms-event">TIME Best Inventions 2024 — Shield named</div><span class="ms-impact medium">medium impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Q1 2025</div><div class="ms-dot high"></div><div><div class="ms-event">NCCN adds Shield to CRC Screening Guidelines</div><span class="ms-impact high">high impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Jun 2025</div><div class="ms-dot medium"></div><div><div class="ms-event">Fast Company World Changing Ideas Award</div><span class="ms-impact medium">medium impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Q3 2025</div><div class="ms-dot high"></div><div><div class="ms-event">Shield V2 algorithm: 84% CRC sensitivity, 90% specificity</div><span class="ms-impact high">high impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Q4 2025</div><div class="ms-dot high"></div><div><div class="ms-event">Quest Diagnostics partnership announced for 2026 rollout</div><span class="ms-impact high">high impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Q4 2025</div><div class="ms-dot high"></div><div><div class="ms-event">PATH Group: Shield access to 250+ health systems in 25 states</div><span class="ms-impact high">high impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Jan 2026</div><div class="ms-dot high"></div><div><div class="ms-event">TRICARE coverage for military — no copay age 45+</div><span class="ms-impact high">high impact</span></div></div>
-        <div class="milestone"><div class="ms-date">Q1 2026</div><div class="ms-dot high"></div><div><div class="ms-event">Quest EMR integration goes live nationwide</div><span class="ms-impact high">high impact</span></div></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-head"><div><div class="card-title">Distribution Expansion Tracker</div><div class="card-sub">Partnership-driven access points for Shield ordering</div></div><div><span class="badge">GH Press</span></div></div>
-      <div class="grid2" style="gap:16px">
-        <div class="partner"><div class="partner-head"><div class="partner-name">Quest Diagnostics</div><span class="partner-status" style="background:rgba(16,185,129,.12);color:#10b981">Launching Q1 2026</span></div><div class="partner-detail">Nationwide EMR integration — physicians can order through existing Quest accounts</div><div class="partner-reach">Reach: 400K+ physicians</div></div>
-        <div class="partner"><div class="partner-head"><div class="partner-name">PATH Group</div><span class="partner-status" style="background:rgba(16,185,129,.12);color:#10b981">Active</span></div><div class="partner-detail">Shield access across 250+ health systems in 25 states</div><div class="partner-reach">Reach: 250+ health systems</div></div>
-        <div class="partner"><div class="partner-head"><div class="partner-name">TRICARE / DoD</div><span class="partner-status" style="background:rgba(16,185,129,.12);color:#10b981">Active — Jan 2026</span></div><div class="partner-detail">No-copay coverage for military, ages 45+</div><div class="partner-reach">Reach: 9.6M beneficiaries</div></div>
-        <div class="partner"><div class="partner-head"><div class="partner-name">Direct Sales Force</div><span class="partner-status" style="background:rgba(217,119,6,.12);color:#d97706">Expanding</span></div><div class="partner-detail">Commercial reps targeting PCPs and GI specialists</div><div class="partner-reach">Reach: Growing</div></div>
-      </div>
-    </div>
-    <div class="card">
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Upcoming Catalysts to Watch</div>
-      <div class="grid3">
-        <div class="catalyst"><div class="catalyst-event">Quest EMR Integration Live</div><div class="catalyst-timing">Q1 2026</div><div class="catalyst-why">Massive distribution unlock — lowers friction for 400K+ physicians to order Shield</div></div>
-        <div class="catalyst"><div class="catalyst-event">Q1 2026 Earnings</div><div class="catalyst-timing">~Apr/May 2026</div><div class="catalyst-why">First quarter with Quest channel contribution — key volume inflection test</div></div>
-        <div class="catalyst"><div class="catalyst-event">Shield MCD (Multi-Cancer)</div><div class="catalyst-timing">2026–2027</div><div class="catalyst-why">Breakthrough Device designation — expands TAM to 8+ cancer types</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <div>Data sources: GH Q4 2025 earnings (Feb 19, 2026), SimilarWeb estimates, Google Trends proxy, company press releases. Web engagement metrics are modeled estimates.</div>
-    <div>Not investment advice. For informational purposes only.</div>
-  </div>
-</div>
-<script>
-const Q = ["Q1 '24","Q2 '24","Q3 '24","Q4 '24","Q1 '25","Q2 '25","Q3 '25","Q4 '25"];
-const tests = [3200,4800,6100,6400,9000,16000,24000,38000];
-const rev = [2.8,4.1,5.3,5.5,7.0,13.5,24.1,35.1];
-const asp = [875,854,869,859,778,844,1004,924];
-const guideQ = ["Q1 '26E","Q2 '26E","Q3 '26E","Q4 '26E"];
-const guideLow = [42000,48000,55000,65000];
-const guideHigh = [45000,52000,60000,68000];
-const guideMid = guideLow.map((l,i)=>(l+guideHigh[i])/2);
-const months = ["Jan '25","Feb '25","Mar '25","Apr '25","May '25","Jun '25","Jul '25","Aug '25","Sep '25","Oct '25","Nov '25","Dec '25","Jan '26","Feb '26"];
-const portalVisits = [32000,33500,35500,34200,36800,37000,36500,37800,39500,38200,39000,39500,41200,43800];
-const shieldPV = [8200,8900,9800,10500,11200,12800,13400,14100,15600,16800,17500,18900,20100,22400];
-const orderClicks = [1800,2100,2500,2900,3400,4100,4800,5200,5900,6500,7200,7800,8600,9500];
-const searchInt = [38,41,42,48,52,55,60,63,68,72,75,78,82,88];
-const qoq = tests.map((t,i)=>i===0?0:Math.round(((t-tests[i-1])/tests[i-1])*100));
-Chart.defaults.color = '#94a3b8';
-Chart.defaults.borderColor = '#334155';
-Chart.defaults.font.family = "'Inter',-apple-system,sans-serif";
-Chart.defaults.font.size = 11;
-Chart.defaults.plugins.legend.labels.usePointStyle = true;
-Chart.defaults.plugins.legend.labels.pointStyleWidth = 10;
-Chart.defaults.plugins.legend.labels.padding = 16;
-function switchTab(id) {
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('panel-'+id).classList.add('active');
-  event.target.classList.add('active');
-}
-new Chart(document.getElementById('ch-volume-overview'), {
-  type:'bar',
-  data:{labels:[...Q,...guideQ],datasets:[{label:'Actual Tests',data:[...tests,null,null,null,null],backgroundColor:'#1a56db',borderRadius:4,order:2},{label:'2026 Guidance (Mid)',data:[null,null,null,null,null,null,null,null,...guideMid],type:'line',borderColor:'#7c3aed',borderDash:[6,3],pointBackgroundColor:'#7c3aed',pointRadius:4,borderWidth:2,order:1}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
-});
-new Chart(document.getElementById('ch-rev-asp'), {
-  type:'bar',
-  data:{labels:Q,datasets:[{label:'Revenue ($M)',data:rev,backgroundColor:'#059669',borderRadius:4,yAxisID:'y',order:2},{label:'ASP ($)',data:asp,type:'line',borderColor:'#d97706',pointBackgroundColor:'#d97706',pointRadius:3,borderWidth:2,yAxisID:'y1',order:1}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>'$'+v+'M'},grid:{color:'#33415544'}},y1:{position:'right',ticks:{callback:v=>'$'+v},grid:{display:false}},x:{grid:{display:false}}}}
-});
-new Chart(document.getElementById('ch-web-funnel'), {
-  type:'line',
-  data:{labels:months,datasets:[{label:'Total Site Visits',data:portalVisits,borderColor:'#1a56db',backgroundColor:'rgba(26,86,219,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2},{label:'Shield Page Views',data:shieldPV,borderColor:'#059669',backgroundColor:'rgba(5,150,105,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2},{label:'Ordering Portal Clicks',data:orderClicks,borderColor:'#7c3aed',backgroundColor:'rgba(124,58,237,.1)',fill:true,tension:.3,borderWidth:2,pointRadius:2}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
-});
-new Chart(document.getElementById('ch-q1-cumul'), {
-  type:'line',
-  data:{labels:["Jan '26","Feb '26","Mar '26E"],datasets:[{label:'Proxy Prediction (Cumulative)',data:[15523,33011,48469],borderColor:'#10b981',pointBackgroundColor:'#10b981',pointRadius:5,borderWidth:3},{label:'Guidance Pace (Mid)',data:[14500,29000,43500],borderColor:'#1a56db',borderDash:[6,3],pointBackgroundColor:'#1a56db',pointRadius:5,borderWidth:2}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
-});
-new Chart(document.getElementById('ch-vol-qoq'), {
-  type:'bar',
-  data:{labels:Q,datasets:[{label:'Tests',data:tests,backgroundColor:'#1a56db',borderRadius:4,yAxisID:'y',order:2},{label:'QoQ Growth %',data:qoq,type:'line',borderColor:'#10b981',pointBackgroundColor:'#10b981',pointRadius:4,borderWidth:2,yAxisID:'y1',order:1}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},y1:{position:'right',ticks:{callback:v=>v+'%'},grid:{display:false}},x:{grid:{display:false}}}}
-});
-new Chart(document.getElementById('ch-guide-range'), {
-  type:'bar',
-  data:{labels:guideQ,datasets:[{label:'High End',data:guideHigh,backgroundColor:'rgba(124,58,237,.3)',borderRadius:4},{label:'Low End',data:guideLow,backgroundColor:'#7c3aed',borderRadius:4}]},
-  options:{responsive:true,maintainAspectRatio:false,scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'K':v},grid:{color:'#33415544'}},x:{grid:{display:false}}}}
-});
+
+// -- WEB CHARTS --
 new Chart(document.getElementById('ch-portal'), {
   type:'line',
   data:{labels:months,datasets:[{label:'Total Visits',data:portalVisits,borderColor:'#1a56db',backgroundColor:'rgba(26,86,219,.15)',fill:true,tension:.3,borderWidth:2,pointRadius:2}]},
