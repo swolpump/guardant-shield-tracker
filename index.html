@@ -417,10 +417,18 @@ async function fetchStockData() {
       const quotes = result.indicators.quote[0];
       const timestamps = result.timestamp;
 
+      // Calculate market cap: use API value, or price x shares outstanding
+      const price = meta.regularMarketPrice;
+      let mktCap = meta.marketCap || null;
+      if (!mktCap && price) {
+        const shares = meta.sharesOutstanding || 126500000;
+        mktCap = price * shares;
+      }
+
       return {
-        price: meta.regularMarketPrice,
+        price: price,
         prevClose: meta.chartPreviousClose || meta.previousClose,
-        marketCap: meta.marketCap || null,
+        marketCap: mktCap,
         currency: meta.currency,
         dates: timestamps.map(t => new Date(t * 1000)),
         closes: quotes.close,
@@ -434,30 +442,36 @@ async function fetchStockData() {
 }
 
 async function fetchSECData() {
-  try {
-    const resp = await fetch(SEC_URL, {
-      headers: { 'User-Agent': 'GHShieldTracker/1.0 dave.brodsky@gmail.com', 'Accept': 'application/json' }
-    });
-    if (!resp.ok) throw new Error('SEC API error');
-    const data = await resp.json();
-    const recent = data.filings.recent;
-    // Find latest 10-Q, 10-K, or 8-K
-    for (let i = 0; i < recent.form.length; i++) {
-      if (['10-Q','10-K','8-K','10-K/A','10-Q/A'].includes(recent.form[i])) {
-        return {
-          form: recent.form[i],
-          date: recent.filingDate[i],
-          accession: recent.accessionNumber[i].replace(/-/g, ''),
-          primaryDoc: recent.primaryDocument[i],
-          cik: data.cik,
-        };
+  const secUrls = [
+    SEC_URL,
+    CORS_PROXY + encodeURIComponent(SEC_URL),
+    'https://api.allorigins.win/raw?url=' + encodeURIComponent(SEC_URL),
+  ];
+  for (const url of secUrls) {
+    try {
+      const resp = await fetch(url, {
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!resp.ok) continue;
+      const data = await resp.json();
+      if (!data.filings) continue;
+      const recent = data.filings.recent;
+      for (let i = 0; i < recent.form.length; i++) {
+        if (['10-Q','10-K','8-K','10-K/A','10-Q/A'].includes(recent.form[i])) {
+          return {
+            form: recent.form[i],
+            date: recent.filingDate[i],
+            accession: recent.accessionNumber[i].replace(/-/g, ''),
+            primaryDoc: recent.primaryDocument[i],
+            cik: data.cik,
+          };
+        }
       }
-    }
-    return null;
-  } catch(e) {
-    console.warn('SEC fetch failed:', e);
-    return null;
+      return null;
+    } catch(e) { continue; }
   }
+  console.warn('All SEC data sources failed');
+  return null;
 }
 
 function formatMktCap(val) {
@@ -482,6 +496,16 @@ function updateStockKPIs(stock) {
   document.getElementById('stock-sub').textContent = (isUp ? '+' : '') + '$' + change.toFixed(2) + ' today \u2022 Yahoo Finance';
 
   document.getElementById('mktcap-val').textContent = formatMktCap(stock.marketCap);
+  if (stock.marketCap && stock.prevClose && stock.price) {
+    const prevMktCap = stock.marketCap * (stock.prevClose / stock.price);
+    const mktCapPct = (((stock.marketCap - prevMktCap) / prevMktCap) * 100).toFixed(2);
+    const mktUp = parseFloat(mktCapPct) >= 0;
+    const mktDeltaEl = document.getElementById('mktcap-delta');
+    if (mktDeltaEl) {
+      mktDeltaEl.textContent = (mktUp ? '\u25B2 ' : '\u25BC ') + (mktUp ? '+' : '') + mktCapPct + '%';
+      mktDeltaEl.className = 'kpi-delta ' + (mktUp ? 'up' : 'down');
+    }
+  }
   document.getElementById('mktcap-sub').textContent = 'Yahoo Finance \u2022 Live';
   document.getElementById('kpi-mktcap').classList.add('live-data');
 }
