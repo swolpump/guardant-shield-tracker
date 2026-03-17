@@ -1,0 +1,641 @@
+{
+  "meta": {
+    "lastUpdated": "2026-03-16",
+    "notes": "Shield-specific metrics (test volumes, page views, ordering clicks) are not available via any public API. Update this file after each earnings release or when new SimilarWeb/web proxy data is available.",
+    "sources": {
+      "testVolumes": "GH Quarterly Earnings (10-Q/10-K)",
+      "shieldRevenue": "GH Quarterly Earnings (10-Q/10-K)",
+      "webMetrics": "SimilarWeb estimates + proxy model",
+      "googleTrends": "Auto-updated via update_data.py",
+      "guidance": "GH Q4 2025 Earnings Call (Feb 19, 2026)"
+    },
+    "lastModelRun": "2026-03-16T20:06:26.230389"
+  },
+  "config": {
+    "serpApiKey": "",
+    "ticker": "GH",
+    "cik": "0001576280",
+    "googleTrendsKeyword": "guardant shield"
+  },
+  "quarters": [
+    "Q1 '24",
+    "Q2 '24",
+    "Q3 '24",
+    "Q4 '24",
+    "Q1 '25",
+    "Q2 '25",
+    "Q3 '25",
+    "Q4 '25"
+  ],
+  "shieldTests": [
+    3200,
+    4800,
+    6100,
+    6400,
+    9000,
+    16000,
+    24000,
+    38000
+  ],
+  "shieldRevenue": [
+    2.8,
+    4.1,
+    5.3,
+    5.5,
+    7.0,
+    13.5,
+    24.1,
+    35.1
+  ],
+  "asp": [
+    875,
+    854,
+    869,
+    859,
+    778,
+    844,
+    1004,
+    924
+  ],
+  "guidance2026": {
+    "totalTests": {
+      "low": 210000,
+      "high": 225000
+    },
+    "totalRevenue": {
+      "low": 162,
+      "high": 174
+    },
+    "quarterlyLabels": [
+      "Q1 '26E",
+      "Q2 '26E",
+      "Q3 '26E",
+      "Q4 '26E"
+    ],
+    "quarterlyTestsLow": [
+      42000,
+      48000,
+      55000,
+      65000
+    ],
+    "quarterlyTestsHigh": [
+      45000,
+      52000,
+      60000,
+      68000
+    ]
+  },
+  "webMetrics": {
+    "months": [
+      "Jan '25",
+      "Feb '25",
+      "Mar '25",
+      "Apr '25",
+      "May '25",
+      "Jun '25",
+      "Jul '25",
+      "Aug '25",
+      "Sep '25",
+      "Oct '25",
+      "Nov '25",
+      "Dec '25",
+      "Jan '26",
+      "Feb '26"
+    ],
+    "siteVisits": [
+      32000,
+      33500,
+      35500,
+      34200,
+      36800,
+      37000,
+      36500,
+      37800,
+      39500,
+      38200,
+      39000,
+      39500,
+      41200,
+      43800
+    ],
+    "shieldPageViews": [
+      8200,
+      8900,
+      9800,
+      10500,
+      11200,
+      12800,
+      13400,
+      14100,
+      15600,
+      16800,
+      17500,
+      18900,
+      20100,
+      22400
+    ],
+    "orderingClicks": [
+      1800,
+      2100,
+      2500,
+      2900,
+      3400,
+      4100,
+      4800,
+      5200,
+      5900,
+      6500,
+      7200,
+      7800,
+      8600,
+      9500
+    ],
+    "googleTrends": [
+      38,
+      41,
+      42,
+      48,
+      52,
+      55,
+      60,
+      63,
+      68,
+      72,
+      75,
+      78,
+      82,
+      88
+    ]
+  },
+  "q1Prediction": {
+    "pointEstimate": 48500,
+    "rangeLow": 44600,
+    "rangeHigh": 52400,
+    "monthlyLabels": [
+      "Jan '26",
+      "Feb '26",
+      "Mar '26E"
+    ],
+    "cumulativeProxy": [
+      15523,
+      33011,
+      48469
+    ],
+    "cumulativeGuidancePace": [
+      14500,
+      29000,
+      43500
+    ],
+    "aspAssumption": 878,
+    "impliedRevenue": 42.6,
+    "guidanceRevLow": 32,
+    "guidanceRevHigh": 35,
+    "signals": [
+      {
+        "label": "Ordering Portal Clicks (Jan+Feb)",
+        "value": "18.1K",
+        "note": "+22% vs Nov+Dec avg"
+      },
+      {
+        "label": "Shield Page Views (Feb)",
+        "value": "22.4K",
+        "note": "+18% vs Dec '25"
+      },
+      {
+        "label": "Google Trends Interest (Feb)",
+        "value": "88/100",
+        "note": "All-time high"
+      },
+      {
+        "label": "Site Traffic (Feb est.)",
+        "value": "~43.8K",
+        "note": "+11% MoM"
+      },
+      {
+        "label": "Quest EMR Launch",
+        "value": "Mid-Q1",
+        "note": "Partial quarter - full impact Q2"
+      },
+      {
+        "label": "TRICARE Ramp",
+        "value": "Active",
+        "note": "9.6M new eligible beneficiaries"
+      }
+    ]
+  },
+  "kpis": {
+    "latestQuarterTests": {
+      "value": "38,000",
+      "delta": "+58% QoQ",
+      "direction": "up",
+      "sub": "vs 24K in Q3 '25"
+    },
+    "fy25Revenue": {
+      "value": "$79.7M",
+      "delta": "+1,349% YoY",
+      "direction": "up",
+      "sub": "vs $5.5M FY24"
+    },
+    "testGuidance": {
+      "value": "210\u2013225K",
+      "delta": "+141\u2013159% YoY",
+      "direction": "up",
+      "sub": "Company guidance"
+    },
+    "revGuidance": {
+      "value": "$162\u2013174M",
+      "delta": "~2x YoY",
+      "direction": "up",
+      "sub": "Company guidance"
+    },
+    "webTraffic": {
+      "value": "~43.8K",
+      "delta": "+11% MoM",
+      "direction": "up",
+      "sub": "Feb '26 \u2014 SimilarWeb est."
+    },
+    "searchInterest": {
+      "value": "88/100",
+      "delta": "+13% MoM",
+      "direction": "up",
+      "sub": "Google Trends proxy"
+    }
+  },
+  "milestones": [
+    {
+      "date": "Jul 2024",
+      "event": "FDA approves Shield as primary CRC screening option",
+      "impact": "high"
+    },
+    {
+      "date": "Oct 2024",
+      "event": "TIME Best Inventions 2024 \u2014 Shield named",
+      "impact": "medium"
+    },
+    {
+      "date": "Q1 2025",
+      "event": "NCCN adds Shield to CRC Screening Guidelines",
+      "impact": "high"
+    },
+    {
+      "date": "Jun 2025",
+      "event": "Fast Company World Changing Ideas Award",
+      "impact": "medium"
+    },
+    {
+      "date": "Q3 2025",
+      "event": "Shield V2 algorithm: 84% CRC sensitivity, 90% specificity",
+      "impact": "high"
+    },
+    {
+      "date": "Q4 2025",
+      "event": "Quest Diagnostics partnership announced for 2026 rollout",
+      "impact": "high"
+    },
+    {
+      "date": "Q4 2025",
+      "event": "PATH Group: Shield access to 250+ health systems in 25 states",
+      "impact": "high"
+    },
+    {
+      "date": "Jan 2026",
+      "event": "TRICARE coverage for military \u2014 no copay age 45+",
+      "impact": "high"
+    },
+    {
+      "date": "Q1 2026",
+      "event": "Quest EMR integration goes live nationwide",
+      "impact": "high"
+    }
+  ],
+  "partners": [
+    {
+      "name": "Quest Diagnostics",
+      "status": "Launching Q1 2026",
+      "statusColor": "green",
+      "detail": "Nationwide EMR integration \u2014 physicians can order through existing Quest accounts",
+      "reach": "400K+ physicians"
+    },
+    {
+      "name": "PATH Group",
+      "status": "Active",
+      "statusColor": "green",
+      "detail": "Shield access across 250+ health systems in 25 states",
+      "reach": "250+ health systems"
+    },
+    {
+      "name": "TRICARE / DoD",
+      "status": "Active \u2014 Jan 2026",
+      "statusColor": "green",
+      "detail": "No-copay coverage for military, ages 45+",
+      "reach": "9.6M beneficiaries"
+    },
+    {
+      "name": "Direct Sales Force",
+      "status": "Expanding",
+      "statusColor": "amber",
+      "detail": "Commercial reps targeting PCPs and GI specialists",
+      "reach": "Growing"
+    }
+  ],
+  "upcomingCatalysts": [
+    {
+      "event": "Quest EMR Integration Live",
+      "timing": "Q1 2026",
+      "why": "Massive distribution unlock \u2014 lowers friction for 400K+ physicians to order Shield"
+    },
+    {
+      "event": "Q1 2026 Earnings",
+      "timing": "~Apr/May 2026",
+      "why": "First quarter with Quest channel contribution \u2014 key volume inflection test"
+    },
+    {
+      "event": "Shield MCD (Multi-Cancer)",
+      "timing": "2026\u20132027",
+      "why": "Breakthrough Device designation \u2014 expands TAM to 8+ cancer types"
+    }
+  ],
+  "modelPrediction": {
+    "targetQuarter": "Q1 '26",
+    "generatedAt": "2026-03-16T20:06:26.230380",
+    "dataPoints": 7,
+    "verdict": "ABOVE",
+    "tests": {
+      "pointEstimate": 53036,
+      "ci80": {
+        "low": 43747,
+        "high": 62324
+      },
+      "ci95": {
+        "low": 38835,
+        "high": 67237
+      },
+      "individualModels": {
+        "bayesianRidge": 55925,
+        "ridge": 48646,
+        "elasticNet": 52397
+      },
+      "uncertainty": {
+        "modelStd": 3636,
+        "residualStd": 6267,
+        "totalStd": 7245
+      },
+      "crossValidation": {
+        "method": "Leave-One-Out",
+        "nSamples": 7,
+        "r2": 0.693,
+        "mae": 4523,
+        "rmse": 6302,
+        "mape": 40.5,
+        "predictions": [
+          {
+            "quarter": "Sample 1",
+            "actual": 4800,
+            "predicted": 1770
+          },
+          {
+            "quarter": "Sample 2",
+            "actual": 6100,
+            "predicted": 5125
+          },
+          {
+            "quarter": "Sample 3",
+            "actual": 6400,
+            "predicted": 12976
+          },
+          {
+            "quarter": "Sample 4",
+            "actual": 9000,
+            "predicted": 13380
+          },
+          {
+            "quarter": "Sample 5",
+            "actual": 16000,
+            "predicted": 18370
+          },
+          {
+            "quarter": "Sample 6",
+            "actual": 24000,
+            "predicted": 24198
+          },
+          {
+            "quarter": "Sample 7",
+            "actual": 38000,
+            "predicted": 23866
+          }
+        ]
+      },
+      "featureImportance": [
+        {
+          "feature": "prior_tests",
+          "coefficient": 4429.96,
+          "importancePct": 22.5
+        },
+        {
+          "feature": "web_clicks_avg",
+          "coefficient": 3652.11,
+          "importancePct": 18.5
+        },
+        {
+          "feature": "google_trends_avg",
+          "coefficient": 2706.58,
+          "importancePct": 13.7
+        },
+        {
+          "feature": "quarter_index_sq",
+          "coefficient": 2365.62,
+          "importancePct": 12.0
+        },
+        {
+          "feature": "total_rev_ratio",
+          "coefficient": -2023.42,
+          "importancePct": 10.3
+        },
+        {
+          "feature": "is_q4",
+          "coefficient": -1695.6,
+          "importancePct": 8.6
+        },
+        {
+          "feature": "trends_momentum",
+          "coefficient": 1259.63,
+          "importancePct": 6.4
+        },
+        {
+          "feature": "clicks_momentum",
+          "coefficient": -981.53,
+          "importancePct": 5.0
+        },
+        {
+          "feature": "quarter_index",
+          "coefficient": -459.37,
+          "importancePct": 2.3
+        },
+        {
+          "feature": "prior_tests_growth",
+          "coefficient": -135.75,
+          "importancePct": 0.7
+        }
+      ]
+    },
+    "revenue": {
+      "pointEstimate": 49,
+      "ci80": {
+        "low": 39,
+        "high": 59
+      },
+      "ci95": {
+        "low": 34,
+        "high": 64
+      },
+      "individualModels": {
+        "bayesianRidge": 52,
+        "ridge": 45,
+        "elasticNet": 48
+      },
+      "uncertainty": {
+        "modelStd": 4,
+        "residualStd": 7,
+        "totalStd": 8
+      },
+      "crossValidation": {
+        "method": "Leave-One-Out",
+        "nSamples": 7,
+        "r2": 0.606,
+        "mae": 6,
+        "rmse": 7,
+        "mape": 61.3,
+        "predictions": [
+          {
+            "quarter": "Sample 1",
+            "actual": 4,
+            "predicted": -1
+          },
+          {
+            "quarter": "Sample 2",
+            "actual": 5,
+            "predicted": 6
+          },
+          {
+            "quarter": "Sample 3",
+            "actual": 6,
+            "predicted": 10
+          },
+          {
+            "quarter": "Sample 4",
+            "actual": 7,
+            "predicted": 15
+          },
+          {
+            "quarter": "Sample 5",
+            "actual": 14,
+            "predicted": 19
+          },
+          {
+            "quarter": "Sample 6",
+            "actual": 24,
+            "predicted": 21
+          },
+          {
+            "quarter": "Sample 7",
+            "actual": 35,
+            "predicted": 21
+          }
+        ]
+      },
+      "featureImportance": [
+        {
+          "feature": "prior_tests",
+          "coefficient": 5.01,
+          "importancePct": 25.0
+        },
+        {
+          "feature": "web_clicks_avg",
+          "coefficient": 3.5,
+          "importancePct": 17.5
+        },
+        {
+          "feature": "google_trends_avg",
+          "coefficient": 3.2,
+          "importancePct": 16.0
+        },
+        {
+          "feature": "clicks_momentum",
+          "coefficient": -2.14,
+          "importancePct": 10.7
+        },
+        {
+          "feature": "quarter_index_sq",
+          "coefficient": 2.13,
+          "importancePct": 10.6
+        },
+        {
+          "feature": "quarter_index",
+          "coefficient": -1.54,
+          "importancePct": 7.7
+        },
+        {
+          "feature": "trends_momentum",
+          "coefficient": 1.52,
+          "importancePct": 7.6
+        },
+        {
+          "feature": "is_q4",
+          "coefficient": -0.76,
+          "importancePct": 3.8
+        },
+        {
+          "feature": "prior_tests_growth",
+          "coefficient": -0.16,
+          "importancePct": 0.8
+        },
+        {
+          "feature": "total_rev_ratio",
+          "coefficient": -0.06,
+          "importancePct": 0.3
+        }
+      ]
+    },
+    "asp": {
+      "predicted": 895,
+      "trendBased": 921,
+      "guidanceBased": 878,
+      "latestActual": 924,
+      "method": "Exponential smoothing blended with management guidance (Medicare mix shift)"
+    },
+    "derivedRevenue": 47.5,
+    "guidance": {
+      "low": 42000,
+      "high": 45000,
+      "mid": 43500
+    },
+    "dataSources": {
+      "googleTrends": "data.json",
+      "edgarXBRL": "live",
+      "webMetrics": "data.json",
+      "historicalData": "data.json"
+    },
+    "modelArchitecture": {
+      "type": "Ensemble (BayesianRidge + Ridge + ElasticNet)",
+      "weights": {
+        "bayesianRidge": 0.5,
+        "ridge": 0.3,
+        "elasticNet": 0.2
+      },
+      "crossValidation": "Leave-One-Out",
+      "scaler": "StandardScaler",
+      "features": [
+        "quarter_index",
+        "quarter_index_sq",
+        "google_trends_avg",
+        "trends_momentum",
+        "prior_tests",
+        "prior_tests_growth",
+        "web_clicks_avg",
+        "clicks_momentum",
+        "is_q4",
+        "total_rev_ratio"
+      ]
+    }
+  }
+}
