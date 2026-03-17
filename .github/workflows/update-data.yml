@@ -1,0 +1,45 @@
+name: Update Shield Tracker Data + ML Predictions
+
+on:
+  schedule:
+    # Run every Monday and Thursday at 6 AM UTC (1 AM EST)
+    - cron: '0 6 * * 1,4'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run data updater (Google Trends + EDGAR)
+        run: python scripts/update_data.py --output data.json
+
+      - name: Run ML prediction pipeline
+        run: python scripts/train_model.py --output data.json
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet data.json && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "chore: auto-update data + retrain ML prediction model"
+          git push
