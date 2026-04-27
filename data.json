@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-04-23",
+    "lastUpdated": "2026-04-27",
     "notes": "Shield-specific metrics (test volumes, page views, ordering clicks) are not available via any public API. Update this file after each earnings release or when new SimilarWeb/web proxy data is available.",
     "sources": {
       "testVolumes": "GH Quarterly Earnings (10-Q/10-K)",
@@ -9,8 +9,8 @@
       "googleTrends": "Auto-updated via update_data.py",
       "guidance": "GH Q4 2025 Earnings Call (Feb 19, 2026)"
     },
-    "lastModelRun": "2026-04-23T07:27:16.181970",
-    "lastAutoUpdate": "2026-04-23T07:27:14.228667"
+    "lastModelRun": "2026-04-27T08:11:26.712905",
+    "lastAutoUpdate": "2026-04-27T08:11:24.481559"
   },
   "config": {
     "serpApiKey": "",
@@ -358,7 +358,7 @@
   ],
   "modelPrediction": {
     "targetQuarter": "Q1 '26",
-    "generatedAt": "2026-04-23T07:27:16.181947",
+    "generatedAt": "2026-04-27T08:11:26.712882",
     "dataPoints": 7,
     "verdict": "ABOVE",
     "tests": {
