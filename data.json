@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-05",
+    "lastUpdated": "2026-11-09",
     "notes": "Shield-specific metrics (test volumes, page views, ordering clicks) are not available via any public API. Update this file after each earnings release or when new SimilarWeb/web proxy data is available.",
     "sources": {
       "testVolumes": "GH Quarterly Earnings (10-Q/10-K)",
@@ -9,8 +9,8 @@
       "googleTrends": "Auto-updated via update_data.py",
       "guidance": "GH Q4 2025 Earnings Call (Feb 19, 2026)"
     },
-    "lastModelRun": "2026-11-05T13:50:00.658995",
-    "lastAutoUpdate": "2026-11-05T13:49:58.209431"
+    "lastModelRun": "2026-11-09T14:53:01.343476",
+    "lastAutoUpdate": "2026-11-09T14:52:58.643726"
   },
   "config": {
     "serpApiKey": "",
@@ -358,7 +358,7 @@
   ],
   "modelPrediction": {
     "targetQuarter": "Q1 '26",
-    "generatedAt": "2026-11-05T13:50:00.658976",
+    "generatedAt": "2026-11-09T14:53:01.343457",
     "dataPoints": 7,
     "verdict": "ABOVE",
     "tests": {
@@ -673,7 +673,7 @@
     {
       "label": "Q3 '25",
       "value_millions": 265.2,
-      "filed": "2025-10-29",
+      "filed": "2026-11-05",
       "end": "2025-09-30"
     },
     {
@@ -687,12 +687,18 @@
       "value_millions": 335.0,
       "filed": "2026-07-30",
       "end": "2026-06-30"
+    },
+    {
+      "label": "Q3 '26",
+      "value_millions": 361.0,
+      "filed": "2026-11-05",
+      "end": "2026-09-30"
     }
   ],
   "_latestFiling": {
-    "form": "8-K",
-    "date": "2026-11-03",
-    "accession": "0001193125-26-445514",
-    "primaryDoc": "d173393d8k.htm"
+    "form": "10-Q",
+    "date": "2026-11-05",
+    "accession": "0001576280-26-000044",
+    "primaryDoc": "gh-20260930.htm"
   }
 }
